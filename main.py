@@ -3,26 +3,26 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("/var/home/loading/Downloads/CODING/creditcard.csv")
+df = pd.read_csv("creditcard.csv")
 df = df.drop("Time", axis=1)
-df = df["V1"]
-print(df.head())
+df['OutNum'] = 0
+print(df.shape)
 
+for col in df.columns[:-1]:
+    Q1 = np.percentile(df[col], 25)
+    Q3 = np.percentile(df[col], 75)
+    IQR = Q3 - Q1
+    lower_bound_iqr = Q1 - 1.5 * IQR
+    upper_bound_iqr = Q3 + 1.5 * IQR
+    print(lower_bound_iqr)
+    print(upper_bound_iqr)
+    outliers = (df[col] < lower_bound_iqr) | (df[col] > upper_bound_iqr)
+    df.loc[outliers, "OutNum"] += 1
+    df[col] = df[col].clip(lower=lower_bound_iqr, upper=upper_bound_iqr)
 
-# Sort the data
-sorted_data = np.sort(df)
-# Calculate quartiles
-Q1 = np.percentile(sorted_data, 25)
-Q3 = np.percentile(sorted_data, 75)
-# Calculate IQR
-IQR = Q3 - Q1
-# Define Lower and upper bounds for outliers using IQR
-lower_bound_iqr = Q1 - 1.5 * IQR
-upper_bound_iqr = Q3 + 1.5 * IQR
-# Identify outliers using IQR
-outliers_iqr = df[
-    (df > lower_bound_iqr) * (df < upper_bound_iqr)
-]
+df = df[df["OutNum"] <= 0.10 * (len(df.columns) - 2)].reset_index(drop=True).columns[:-1]
+print(df)
+
 ##############
 """
 1. loop through every column
@@ -33,11 +33,9 @@ outliers_iqr = df[
 """
 
 
-print(outliers_iqr)
+# print(outliers_iqr)
 
-print(lower_bound_iqr)
-#-4.274396001792603
-#-2.7019605905224315
+# print(lower_bound_iqr)
 
 
 """
@@ -87,4 +85,3 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 """
-
