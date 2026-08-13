@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("creditcard.csv")
 df = df.drop("Time", axis=1)
 df['OutNum'] = 0
-print(df.shape)
+old_size = len(df)
 
 for col in df.columns[:-1]:
     Q1 = np.percentile(df[col], 25)
@@ -20,9 +20,9 @@ for col in df.columns[:-1]:
     df.loc[outliers, "OutNum"] += 1
     df[col] = df[col].clip(lower=lower_bound_iqr, upper=upper_bound_iqr)
 
-df = df[df["OutNum"] <= 0.10 * (len(df.columns) - 2)].reset_index(drop=True).columns[:-1]
+df = df[df["OutNum"] <= 0.20 * (len(df.columns) - 2)].reset_index(drop=True).iloc[:, :-1] #0.20 is threshold
 print(df)
-
+print((old_size - len(df)) / old_size)
 ##############
 """
 1. loop through every column
