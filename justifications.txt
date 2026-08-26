@@ -1,0 +1,32 @@
+rand            | random value
+*sample_amount  | larger worse time complexity; smaller more volitile
+*feature amount | does not have large impact on pipeline outcome. 20 is good middleground for not being to complex and not to small
+*blob_amount    | check (might become changes)
+*cluster_std    | check (might become changes)
+
+noise_frac | changes
+*n_features_affected | big effect (might become changes)
+
+iqr_fence       | default
+iqr_col_ratio   | conservative, to prevent false pos
+isof_estimators | 600, larger diminishing returns; smaller worse; tuned on 0 noise to be conservative
+kmeans_init     | larger diminishing returns; smaller worse;
+kmeans_contam   | conservative to prevent false pos
+*dbscan_eps     | check (3 default)
+dbscan_min_samp | default
+lof_neighbors   | default
+
+isof_estimators:
+data = noisy_df.copy()
+mask = true_mask.copy()
+
+j = []
+
+for i in range(1, 30):
+    model = IsolationForest(n_estimators=i * 20, contamination='auto', n_jobs=-1, random_state=rand)
+    flagged = model.fit_predict(data) == -1
+    
+    j.append(confusion_matrix(mask, flagged, labels=[False, True])[0][1])
+
+plt.plot(j)
+plt.show()
