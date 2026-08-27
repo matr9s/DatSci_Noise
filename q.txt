@@ -4,7 +4,7 @@ should be take run time into account for diminishing returns
 EDA before or after noise or both
 what composes the EDA
 EDA for all datasets or just 1
-are the 5 noise types enough?
+are the 4 noise types enough?
 more datasets
 3 datasets = small, medium and large amount of noise
 kmeans_contam issue
