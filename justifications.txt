@@ -30,3 +30,27 @@ for i in range(1, 30):
 
 plt.plot(j)
 plt.show()
+
+
+eps:
+from sklearn.neighbors import NearestNeighbors
+
+def plot_k_distance(scaled_data, min_samples):
+    neighbors = NearestNeighbors(n_neighbors=min_samples, n_jobs=-1)
+    neighbors.fit(scaled_data)
+    distances, _ = neighbors.kneighbors(scaled_data)
+
+    k_distances = np.sort(distances[:, min_samples - 1])
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(k_distances)
+    plt.xlabel("Points sorted by k-distance")
+    plt.ylabel(f"Distance to {min_samples}-th nearest neighbor")
+    plt.title("k-distance plot (look for the elbow)")
+    plt.grid(True)
+    plt.show()
+
+    return k_distances
+
+scaled = StandardScaler().fit_transform(data)
+k_distances = plot_k_distance(scaled, min_samples=dbscan_min_samp)
