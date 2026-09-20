@@ -8,11 +8,19 @@ FINAL MATRIX AND CLASS REPORT ON ALL AT END ####################################
 
 SPECIFY PIPELINE STAGE BEFORE STAGE REPORT##################################################
 
+REPLACE "-" WITH np.NAN#####################################################################
+
+SET HYPERPARAMETERS TO BE INPUTS INTO PIPELINE FUNCTION (WITH DEFAULT EQUAL TO CURRENT)#####
+
+BETTER VAR NAMES############################################################################
+
+DOUBLE CHECK IMPUTATION METHOD##############################################################
+
 (T TEST AS EXAMPLE) TO VERIFY INCREASE IN SIGNIFICANCE 
 
 EDA GRAPHS
 
-LOF NOT TUNED + (TUNE OTHER HYPERPARAMETRES)
+LOF NOT TUNED + (TUNE OTHER HYPERPARAMETERS)
 
 CHECKS (BLOB COUNT, STD, FEATURE COUNT)
 
@@ -23,3 +31,9 @@ JUSTIFICATION
 UPDATE OLD DELIVERABLES
 
 EXPLAIN CODE :(
+
+
+SHUMBA QUESTIONS:
+are metrics correct
+should percentage based mitication choice be implemented
+talk about reason for imputation method due to correlation
