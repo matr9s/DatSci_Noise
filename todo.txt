@@ -1,15 +1,25 @@
 TODO:
 
-(T test, as example) to verify increase is significant
+ARRANGE MEETING W SHUMBA####################################################################
 
-FINAL MATRIX AND REPORT ON ALL AT END 
+KMEANS SILOUETTE BEFORE END KMEANS MODEL####################################################
+
+FINAL MATRIX AND CLASS REPORT ON ALL AT END ################################################
+
+SPECIFY PIPELINE STAGE BEFORE STAGE REPORT##################################################
+
+(T TEST AS EXAMPLE) TO VERIFY INCREASE IN SIGNIFICANCE 
 
 EDA GRAPHS
 
-LOF NOT TUNED
+LOF NOT TUNED + (TUNE OTHER HYPERPARAMETRES)
 
 CHECKS (BLOB COUNT, STD, FEATURE COUNT)
 
 ASSUMPTIONS
 
 JUSTIFICATION
+
+UPDATE OLD DELIVERABLES
+
+EXPLAIN CODE :(
