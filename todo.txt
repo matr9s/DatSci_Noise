@@ -1,39 +1,35 @@
 TODO:
 
-ARRANGE MEETING W SHUMBA####################################################################
+REPLACE "-" WITH np.NAN
+SPECIFY PIPELINE STAGE BEFORE STAGE REPORT
+SET HYPERPARAMETERS TO BE INPUTS INTO PIPELINE FUNCTION (WITH DEFAULT EQUAL TO CURRENT)
+KMEANS SILOUETTE BEFORE END KMEANS MODEL
+ARRANGE MEETING W SHUMBA
+FINAL MATRIX AND CLASS REPORT ON ALL METHODS AT END
 
-KMEANS SILOUETTE BEFORE END KMEANS MODEL####################################################
 
-FINAL MATRIX AND CLASS REPORT ON ALL AT END ################################################
-
-SPECIFY PIPELINE STAGE BEFORE STAGE REPORT##################################################
-
-REPLACE "-" WITH np.NAN#####################################################################
-
-SET HYPERPARAMETERS TO BE INPUTS INTO PIPELINE FUNCTION (WITH DEFAULT EQUAL TO CURRENT)#####
-
-BETTER VAR NAMES############################################################################
-
-DOUBLE CHECK IMPUTATION METHOD##############################################################
-
-(T TEST AS EXAMPLE) TO VERIFY INCREASE IN SIGNIFICANCE 
+(T TEST AS EXAMPLE) TO VERIFY INCREASE IS SIGNIFICANT
 
 EDA GRAPHS
-
 LOF NOT TUNED + (TUNE OTHER HYPERPARAMETERS)
+GO OVER ASSUMPTIONS
+CHECK ALL JUSTIFICATIONS
 
-CHECKS (BLOB COUNT, STD, FEATURE COUNT)
-
-ASSUMPTIONS
-
-JUSTIFICATION
-
+BETTER VAR NAMES
+ADD COMMENTS
+EXPLAIN CODE
 UPDATE OLD DELIVERABLES
-
-EXPLAIN CODE :(
 
 
 SHUMBA QUESTIONS:
-are metrics correct
+show metrics
 should percentage based mitication choice be implemented
-talk about reason for imputation method due to correlation
+talk about reason for imputation method due to correlation and ask if imputation method is sufficiant
+talk about iqr implementation method due to restrictions of iqr (assymetric multimodal distributions)
+ask if anything else is needed
+talk about how noise sometimes so little change that it does not get detected or could put in diff cluster
+talk about noise type overlap, but expected
+talk about how artificial is manufactured example inidating significance of each method, while real world is example that it works in practice
+talk about how not every method detects noise on real world dataset. ask if this is sufficiant
+ask if should include more real world datasets
+talk about how only 1 noise type per row, because issues with true mask and more than 1 not needed, since more severe noise type will be detected first and will fix both noise types
