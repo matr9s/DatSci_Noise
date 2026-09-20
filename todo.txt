@@ -32,4 +32,5 @@ talk about noise type overlap, but expected
 talk about how artificial is manufactured example inidating significance of each method, while real world is example that it works in practice
 talk about how not every method detects noise on real world dataset. ask if this is sufficiant
 ask if should include more real world datasets
+talk about kmeans contam not known and ask if should be assumed to be 0 for real world dataset, thus kmeans does nothing or set to low number
 talk about how only 1 noise type per row, because issues with true mask and more than 1 not needed, since more severe noise type will be detected first and will fix both noise types
