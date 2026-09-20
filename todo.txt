@@ -1,12 +1,8 @@
 TODO:
 
-IQR noise type must change along with iqr itself
-
 (T test, as example) to verify increase is significant
 
-if minimal increase, consider if increase is worth
-
-CONFUSION MATRIX AND CLASS REPORT FOR RELEVANT NOISE TYPES AFTER EACH METHOD; FINAL MATRIX AND REPORT ON ALL AT END 
+FINAL MATRIX AND REPORT ON ALL AT END 
 
 EDA GRAPHS
 
