@@ -1,12 +1,9 @@
 TODO:
 
-REPLACE "-" WITH np.NAN
-SPECIFY PIPELINE STAGE BEFORE STAGE REPORT
-SET HYPERPARAMETERS TO BE INPUTS INTO PIPELINE FUNCTION (WITH DEFAULT EQUAL TO CURRENT)
-KMEANS SILOUETTE BEFORE END KMEANS MODEL
-ARRANGE MEETING W SHUMBA
-FINAL MATRIX AND CLASS REPORT ON ALL METHODS AT END
+FO RREMOVAL METHOD IF MORE THAN CERTAIN % FLAGGED DO NOT REMOVE AND INSTEAD TELL USER
 
+FINAL CONFUSION MATRIX + CLASS REPORT
+RAND AS VAR IN PIPELINE
 
 (T TEST AS EXAMPLE) TO VERIFY INCREASE IS SIGNIFICANT
 
@@ -34,3 +31,4 @@ talk about how not every method detects noise on real world dataset. ask if this
 ask if should include more real world datasets
 talk about kmeans contam not known and ask if should be assumed to be 0 for real world dataset, thus kmeans does nothing or set to low number
 talk about how only 1 noise type per row, because issues with true mask and more than 1 not needed, since more severe noise type will be detected first and will fix both noise types
+issue on image
